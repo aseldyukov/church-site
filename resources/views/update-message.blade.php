@@ -5,7 +5,7 @@
 @section('content')
 <h1>Обновление записи</h1>
 
-<form action="{{ route('contact-form') }}" method="post">
+<form action="{{ route('contact-update-submit', $data->name ) }}" method="post">
     @csrf
     
     <div class="form-group">
@@ -25,10 +25,10 @@
 
     <div class="form-group">
         <label for="message">Cообщения</label>
-        <textarea name="message" text="{{ $data->message }}" id="message" placeholder="Введите сообщение" class="form-control"></textarea>
+        <textarea name="message" id="message" placeholder="Введите сообщение" class="form-control">{{$data->message}}</textarea>
     </div>
 
-    <button type="submit" class="btn btn-success">Обновить</button>
+    <button type="submit" class="btn btn-success">Update</button>
 
 </form>
 
